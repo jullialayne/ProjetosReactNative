@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, StyleSheet, Image, TouchableOpacity,Text} from 'react-native';
+import {View, StyleSheet, Image, TouchableOpacity, Text} from 'react-native';
 import Torch from 'react-native-torch';
 import RNShake from 'react-native-shake';
 
@@ -39,20 +39,14 @@ const App = () => {
         />
         <Text
           accessibilityLabel="Nome: "
-          style={toggle ? [style.name,style.name.on] : [style.name, style.name.off]}>
-          {
-            toggle
-              ? 'Ligada'
-              : 'Desligada'
-          }
+          style={
+            toggle ? [style.name, style.name.on] : [style.name, style.name.off]
+          }>
+          {toggle ? 'Ligada' : 'Desligada'}
         </Text>
         <Image
           style={style.power}
-          source={
-            toggle
-              ? require('./assets/icons/poweroff.png')
-              : require('./assets/icons/poweron.png')
-          }
+          source={require('./assets/icons/power.png')}
         />
       </TouchableOpacity>
     </View>
@@ -100,7 +94,7 @@ const style = StyleSheet.create({
     },
   },
   power: {
-    resizeMode: 'contain', 
+    resizeMode: 'contain',
     alignSelf: 'center',
     width: 100,
     height: 100,
